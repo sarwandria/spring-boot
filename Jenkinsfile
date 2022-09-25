@@ -1,13 +1,13 @@
 #!/usr/bin/env groovy
 pipeline {
+
+    agent any
 /*
-    agent {
         docker {
                 reuseNode true
                 image 'maven:3.5.4-alpine'
                 args '-v /root/.m2:/root/.m2'
         }
-    }
  */
     environment {
         ECR_PROTOCOL = 'https://'
