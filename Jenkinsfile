@@ -121,7 +121,7 @@ pipeline {
                 }
             }
             steps {
-                sh "docker -H http://192.168.1.2:2377 stack deploy spring-boot-dev -c docker-compose.yml --with-registry-auth --resolve-image=always"
+                sh "docker -H http://192.168.1.2:2399 stack deploy spring-boot-dev -c docker-compose.yml --with-registry-auth --resolve-image=always"
             }
         }
         stage('Deploy to production') {
@@ -131,6 +131,7 @@ pipeline {
                 }
             }
             steps {
+
                 sh '''
                     export DOCKER_TLS_VERIFY=
                     docker -H tcp://18.138.22.148:2375 stack deploy spring-boot-prod -c docker-compose.yml --with-registry-auth --resolve-image=always"
