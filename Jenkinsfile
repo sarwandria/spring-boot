@@ -136,7 +136,7 @@ pipeline {
             steps {
                 sh '''
                     export DOCKER_TLS_VERIFY=
-                    docker -H tcp://18.141.168.200/:2375 stack deploy spring-boot-prod -c docker-compose.yml --with-registry-auth --resolve-image=always
+                    docker -H tcp://18.141.168.200:2375 stack deploy spring-boot-prod -c docker-compose.yml --with-registry-auth --resolve-image=always
                 '''
             }
         }
