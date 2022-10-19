@@ -8,6 +8,6 @@ public class HelloWorldController {
 
     @GetMapping("/")
     public String sendGreetings() {
-        return "Version 1.0";
+        return "Version 1.0.1";
     }
 }
